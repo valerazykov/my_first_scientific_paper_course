@@ -1,6 +1,5 @@
-\documentclass{article}
+\documentclass{extarticle}
 \usepackage{arxiv}
-
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
 \usepackage[T1]{fontenc}
@@ -8,151 +7,128 @@
 \usepackage{booktabs}
 \usepackage{amsfonts}
 \usepackage{nicefrac}
-\usepackage{microtype}
 \usepackage{lipsum}
 \usepackage{graphicx}
+\usepackage{svg}
 \usepackage{natbib}
 \usepackage{doi}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{tikz}                % для создания иллюстраций
+\usepackage{pgfplots}            % для вывода графиков функций
+\usepackage{geometry}		 % для настройки размера полей
+\usepackage{hhline}
+\usepackage{placeins}
+\usepackage{indentfirst}         % для отступа в первом абзаце секции
+\usepackage{multirow}            % для таблицы с результатами
+\usepackage{makecell}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{xcolor}
 
 
 
-\title{A template for the \emph{arxiv} style}
+\title{Распознавание рукописных архивов А. В. Сухово-Кобылина}
 
-\author{ David S.~Hippocampus\thanks{Use footnote for providing further
-		information about author (webpage, alternative
-		address)---\emph{not} for acknowledging funding agencies.} \\
-	Department of Computer Science\\
-	Cranberry-Lemon University\\
-	Pittsburgh, PA 15213 \\
-	\texttt{hippo@cs.cranberry-lemon.edu} \\
+\author{ Зыков Валерий Павлович \\
+	ВМК МГУ\\
+	\texttt{valera\_zykov\_2003@mail.ru} \\
 	%% examples of more authors
 	\And
-	Elias D.~Striatum \\
-	Department of Electrical Engineering\\
-	Mount-Sheikh University\\
-	Santa Narimana, Levand \\
-	\texttt{stariate@ee.mount-sheikh.edu} \\
-	%% \AND
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
-	%% \And
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
-	%% \And
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
+	Местецкий Леонид Моисеевич \\
+	ВМК МГУ \\
+	\texttt{mestlm@mail.ru} \\
 }
-\date{}
+\date{2024}
 
-\renewcommand{\shorttitle}{\textit{arXiv} Template}
-
-%%% Add PDF metadata to help others organize their library
-%%% Once the PDF is generated, you can check the metadata with
-%%% $ pdfinfo template.pdf
-\hypersetup{
-pdftitle={A template for the arxiv style},
-pdfsubject={q-bio.NC, q-bio.QM},
-pdfauthor={David S.~Hippocampus, Elias D.~Striatum},
-pdfkeywords={First keyword, Second keyword, More},
-}
 
 \begin{document}
 \maketitle
-
 \begin{abstract}
-	\lipsum[1]
+	В данной работе будет решаться задача распознавания архива исторических рукописных архивов.
+	Нет универсальной оптимальной модели для распознавания рукописных исторических документов, потому что каждый из них содержит свои особенности. Кроме того, из-за большого отличия в почерках, модели, обучающиеся под конкретного автора, оказываются эффективнее.
+	Цель данной работы -- предложить метод обучения и модели, эффективно работающие на архиве дневников Александра Васильевича Сухово-Кобылина. Главными особенностями данного архива является плотная компоновка строчек, наличие нескольких языков, пропущенные слова и символы в разметке. Для каждой особенности будут рассматриваться решения, позволяющие обучить модель и улучшить ее итоговое качество.
 \end{abstract}
 
 
-\keywords{First keyword \and Second keyword \and More}
-
-\section{Introduction}
-\lipsum[2]
-\lipsum[3]
-
-\section{Headings: first level}
-\label{sec:headings}
-
-\lipsum[4] See Section \ref{sec:headings}.
-
-\subsection{Headings: second level}
-\lipsum[5]
-\begin{equation}
-	\xi _{ij}(t)=P(x_{t}=i,x_{t+1}=j|y,v,w;\theta)= {\frac {\alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}{\sum _{i=1}^{N} \sum _{j=1}^{N} \alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}}
-\end{equation}
-
-\subsubsection{Headings: third level}
-\lipsum[6]
-
-\paragraph{Paragraph}
-\lipsum[7]
-
-
-
-\section{Examples of citations, figures, tables, references}
-\label{sec:others}
-
-\subsection{Citations}
-Citations use \verb+natbib+. The documentation may be found at
-\begin{center}
-	\url{http://mirrors.ctan.org/macros/latex/contrib/natbib/natnotes.pdf}
-\end{center}
-
-Here is an example usage of the two main commands (\verb+citet+ and \verb+citep+): Some people thought a thing \citep{kour2014real, hadash2018estimate} but other people thought something else \citep{kour2014fast}. Many people have speculated that if we knew exactly why \citet{kour2014fast} thought this\dots
-
-\subsection{Figures}
-\lipsum[10]
-See Figure \ref{fig:fig1}. Here is how you add footnotes. \footnote{Sample of the first footnote.}
-\lipsum[11]
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.5\textwidth]{../figures/log_reg_cs_exp.eps}
-	\caption{Sample figure caption.}
-	\label{fig:fig1}
-\end{figure}
-
-\subsection{Tables}
-See awesome Table~\ref{tab:table}.
-
-The documentation for \verb+booktabs+ (`Publication quality tables in LaTeX') is available from:
-\begin{center}
-	\url{https://www.ctan.org/pkg/booktabs}
-\end{center}
-
-
-\begin{table}
-	\caption{Sample table title}
-	\centering
-	\begin{tabular}{lll}
-		\toprule
-		\multicolumn{2}{c}{Part}                   \\
-		\cmidrule(r){1-2}
-		Name     & Description     & Size ($\mu$m) \\
-		\midrule
-		Dendrite & Input terminal  & $\sim$100     \\
-		Axon     & Output terminal & $\sim$10      \\
-		Soma     & Cell body       & up to $10^6$  \\
-		\bottomrule
-	\end{tabular}
-	\label{tab:table}
-\end{table}
-
-\subsection{Lists}
+\section{Введение}
+\subsection{Подходы к распознаванию}
+Существует два основных подхода к распознаванию страниц текста:
 \begin{itemize}
-	\item Lorem ipsum dolor sit amet
-	\item consectetur adipiscing elit.
-	\item Aliquam dignissim blandit est, in dictum tortor gravida eget. In ac rutrum magna.
+	\item Сегментация строк в изображении и распознавание текста в строках.
+	
+	Отдельная модель или процедура находит строки, которые затем поступают в модель распознавания. Для обучения нужна построчная разметка и подготовленные
+	изображения. Для решения задачи детекции также нужна информация о расположении строк в странице.
+	
+	В близких работах с распознаванием русскоязычных исторических архивов рассматриваются именно такие подходы.
+	
+	Архивы Петра Первого \cite{peter_dataset}. Основным вкладом данной работы является создание датасета на основе архива исторических рукописных текстов Петра Первого.
+	Помимо датасета вокруг решения задачи распознавания было проведено соревнование, главным треком в котором было распознавание строк. Лучшая архитектура
+	была описана в статье и представляет собой CRNN (Convolutional Recurrent Neural
+	Network) с лучевым поиском с N-граммной моделью, обучается с CTC-loss.
+
+	Яндекс: Поиск по архивам. В данной работе также были подготовлены массивы
+	исторических документов и решалась задача их расшифровки, такими документами являлись метрические книги, ревизорские сказки, которые позволяют проводить генеалогические исследования. Для страниц была составлена разметка на
+	строчки, а также на смысловые блоки. Сама модель состояла из шага сегментации строк в виде Gaussian heatmap, а для распознавания использовался сверточный кодировщик и RNN-декодировщик с механизмом внимания, поэтому она
+	обучалась с использованием кросс-энтропии. Блоки строк находились с моделью
+	Instance Segmentation.
+
+	Наиболее перспективным архитектурным решением оказалось использование трансформерной кодировщик-декодировщик архитектуры в статье TrOCR \cite{TrOCR}. Авторы
+	отказались от сверточных слоев и подают в кодировщик уменьшенное исходное
+	изображение, нарезанное на патчи. Декодировщик генерирует bpe-токены. Модель
+	обучается с кросс-энтропией и использует для инициализации предобученные ViT
+	и RoBERTa.
+	
+	\item Распознавание текста на уровне страниц.
+	Недавно появившийся и развивающийся подход- End-to-End распознавание страниц с текстом. Преимущество заключается в упрощенной процедуре разметки и
+	конечного использования модели. Рассмотрим несколько примеров архитектур.
+	Они предполагают моноколоночную структуру текста.
+	
+	SPAN \cite{SPAN} -- наиболее простая архитектура. Концептуально представляется как комбинация энкодера -- последовательности сверточных блоков с пулингом и depthwise сверточных блоков с residual-связями, и декодера -- одного сверточного слоя.
+	Декодер моделирует 2d матрицу символов, с векторами вероятностей символов в
+	каждой клетке. Затем эта матрица с помощью последовательной горизонтальной
+	конкатенации приводится в одну строку- цепочку векторов вероятностей символов. Далее эта цепочка преобразовывается по правилам CTC.
+	
+	Vertical Attention Network \cite{VAN} также содержит сверточный энкодер, но кроме того
+	для нее был предложен механизм вертикального внимания. Этот механизм позволяет рекуррентно собирать представления для строк в странице, которые затем
+	приводятся к матрицам вероятностей сверточным и lstm-декодером. Эта модель
+	показывает лучшее качество на открытых датасетах и будет использоваться в качестве базовой.
+	
+	В OrigamiNet \cite{OrigamiNet} статье предложена другая архитектура для распознавания. Модель представляет полностью сверточную сеть, которая концептуально представляется как комбинация из двух частей -- сверточный backbone и модуль OrigamiNet.
+	OrigamiNet модуль получает на вход внутреннее представление изображения, трехмерный тензор, и при помощи последовательных операций вертикального расширения, горизонтального сужения и сверток приводит это представление к вертикальной цепочке вероятностей символов. Горизонтальная размерность схлопывается, а вертикальная вытягивается в высоту всего возможного числа символов.
+	Далее эта цепочка обрабатывается с CTC. OrigamiNet обучается напрямую на страницах и не требует дополнительной разметки. Однако эта модель применима только к изображениям заданных размеров- чтобы после всех сверточных преобразований получилось схлопнуть горизонтальную размерность.
 \end{itemize}
-
-
-\bibliographystyle{unsrtnat}
-\bibliography{references}
-
+	
+	
+%\pagebreak
+\begin{thebibliography}{00}
+	\bibitem{peter_dataset}
+	Mark Potanin, Denis Dimitrov, Alex Shonenkov, Vladimir Bataev, Denis Karachev, Maxim Novopoltsev -- Digital Peter: Dataset, Competition and Handwriting Recognition Methods, arXiv:2103.09354 [cs.CV]
+	
+	\bibitem{SPAN}
+	Denis Coquenet, Clement Chatelain, Thierry Paquet -- SPAN: a Simple Predict \& Align
+	Network for Handwritten Paragraph Recognition, ICDAR 2021
+	
+	\bibitem{TrOCR}
+	Minghao Li and Tengchao Lv and Jingye Chen and Lei Cui and Yijuan Lu and Dinei Florencio and Cha Zhang and Zhoujun Li and Furu Wei -- TrOCR: Transformer-based
+	Optical Character Recognition with Pre-trained Models, CoRR 2022
+	
+	\bibitem{OrigamiNet}
+	MohamedYousef, Tom E. Bishop -- OrigamiNet: Weakly-Supervised, Segmentation-Free,
+	One-Step, Full Page Text, Recognition by learning to unfold, CVPR 2020
+	
+	\bibitem{VAN}
+	Denis Coquenet, Clement Chatelain, Thierry Paquet -- End-to-end Handwritten
+	Paragraph Text Recognition Using a Vertical Attention Network
+	
+	\bibitem{few_shot}
+	Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah et al.-- Language Models
+	are Few-Shot Learners, NeurIPS 2020
+\end{thebibliography}
+%\addcontentsline{toc}{section}{\protect\textbf{Список литературы}}
+	
+	
 \end{document}

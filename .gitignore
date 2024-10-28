@@ -1,5 +1,8 @@
 slides/OST/*
 rel_works/*
+paper/main.aux
+paper/main.out
+paper/main.synctex.gz
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
