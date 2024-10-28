@@ -1,0 +1,11 @@
+# Обзор литературы
+
+| Название | Год |Автор | Ссылка | Идея |
+| -------- |---- | ----- | ------ | ---- |
+| End-to-end Handwritten Paragraph Text Recognition Using a Vertical Attention Network | 2023 | Denis Coquenet | [paperswithcode](https://paperswithcode.com/paper/end-to-end-handwritten-paragraph-text) | Описана модель VAN, состоящая из сверточного кодировщика, блока вертикального внимания,  сверточного и lstm-декодера.
+| Методы распознавания русскоязычных рукописных текстов на исторических архивах документов (магистерская диссертация) | 2024 | Стёпочкин Д. В. | null | Применение модели VAN и ее модификации для распознавания дневника Ф. П. Литке. |
+| Digital Peter: Dataset, Competition and Handwriting Recognition Methods | 2021 | Mark Potanin | [arxiv](https://arxiv.org/abs/2103.09354) | dataset of Peter the Great's |
+| SPAN: a Simple Predict & Align Network for Handwritten Paragraph Recognition | 2021 | Denis Coquenet | [arxiv](https://arxiv.org/abs/2102.08742) | Простая архитектура. Концептуально представляется как комбинация энкодера - последовательности сверточных блоков с пулингом и depthwise сверточных блоков с residual-связями, и декодера - одного сверточного слоя.
+| TrOCR: Transformer-based Optical Character Recognition with Pre-trained Models | 2022 | Minghao Li | [arxiv](https://arxiv.org/abs/2109.10282) | Авторы отказались от сверточных слоев и подают в кодировщик уменьшенное исходное изображение, нарезанное на патчи. Декодировщик генерирует bpe-токены. Модель обучается с кросс-энтропией и использует для инициализации предобученные ViT и RoBERTa.
+| OrigamiNet: Weakly-Supervised, Segmentation-Free, One-Step, Full Page Text Recognition by learning to unfold | 2020 | Mohamed Yousef | [arxiv](https://arxiv.org/abs/2006.07491) |  Модель представляет полностью сверточную сеть, которая концептуально представляется как комбинация из двух частей - сверточный backbone и модуль OrigamiNet. |
+| Language Models are Few-Shot Learners | 2020 | Tom B. Brown | [paperswithcode](https://paperswithcode.com/paper/language-models-are-few-shot-learners) | 
