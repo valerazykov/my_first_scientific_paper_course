@@ -4,6 +4,7 @@ rel_works/*
 paper/main.aux
 paper/main.out
 paper/main.synctex.gz
+paper/main.log
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
